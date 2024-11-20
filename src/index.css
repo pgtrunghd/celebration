@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app.show-background {
+  animation: fadeIn 0.5s forwards 0.5s;
+}
+
+.open-suprise {
+  background-color: pink;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.1s ease-in;
+}
+
+.open-suprise:hover {
+  opacity: 0.8;
+}
+
+.open-suprise.hide {
+  animation: hide 0.5s forwards;
+}
+
+.text {
+  font-size: 28px;
+  font-family: "Pacifico", cursive;
+  font-weight: 500;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  letter-spacing: 1px;
+  font-style: italic;
+  color: #e48ca3;
+  text-align: center;
+  /* display: none; */
+}
+
+.text.show {
+  animation: show 0.5s forwards 1s;
+}
+
+@keyframes hide {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    transform: translateY(30px);
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+    display: none;
+    z-index: -1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    display: block;
+    z-index: 10;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    background: url("assets/background-20-11-dep-nhat-09.jpg") no-repeat center;
+    background-size: cover;
+    transform: scale(1);
+  }
+}
